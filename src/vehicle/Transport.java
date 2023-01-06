@@ -34,6 +34,7 @@ public abstract class Transport {
         } else {
             this.maxSpeed = maxSpeed;
         }
+        //ыыывфывф
     }
 
     public String getBrand() {
