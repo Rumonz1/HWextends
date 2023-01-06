@@ -52,6 +52,6 @@ public class Main {
         DriverD<Bus> vladimir = new DriverD<>("Владимиров Владимир Владимирович", true, "D", 5);
         System.out.println(vladimir);
         vladimir.checkDriver(zaz);
-//
+
     }
 }
