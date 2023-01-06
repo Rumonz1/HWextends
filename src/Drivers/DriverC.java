@@ -15,7 +15,7 @@ public class DriverC <A extends Transport> extends Driver {
     public String stopMoving() {
         return getFullName()+" Паркуйся и выходи из машины";
     }
-
+//
     @Override
     public void refuelCar(boolean refuelCar) {
         if (refuelCar == true) {

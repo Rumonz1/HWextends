@@ -86,7 +86,7 @@ public class Driver implements DriverFunctions {
     public String startMoving() {
         return "Заводи мотор и вперёд!";
     }
-
+//
     @Override
     public String stopMoving() {
         return "Паркуйся и выходи из машины";

@@ -21,7 +21,7 @@ public class Bus extends  Transport implements Competing{
         } else {
             System.out.println("Едем дальше!");
         }
-
+//
     }
 
     @Override

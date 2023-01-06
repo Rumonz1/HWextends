@@ -15,7 +15,7 @@ public abstract class Transport implements Competing {
             this.engineVolume = 1.5;}else {
             this.engineVolume = engineVolume;
         }
-
+//
         if (brand  == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "default";} else {
             this.brand =brand;
