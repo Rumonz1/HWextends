@@ -68,6 +68,8 @@ public abstract class Transport implements Competing {
         System.out.println(getBrand() +" "+ getModel()+" Стоп! Паркуемся!");
     }
 
+    public abstract void printType();
+
 //    public int getYear() {
 //        return year;
 //    }

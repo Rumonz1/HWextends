@@ -1,8 +1,11 @@
 package vehicle;
 
 public class Car extends  Transport implements Competing{
+    private  TypeOfBody typeOfBody;
+
 
     private double engineVolume;
+
 //    private String color;
     //
 //    private String transmission;
@@ -11,7 +14,6 @@ public class Car extends  Transport implements Competing{
 //    private final int seatsNumber;
 //    private boolean summerWheels;
 //    private Key key;
-
 //    public Car(String brand, String model, int year, String country, String color, double engineVolume) {
 //        this(brand, model, year, country, color, engineVolume, 120);
 //
@@ -27,15 +29,24 @@ public class Car extends  Transport implements Competing{
 //        this.bodyType = "Седан";
 //        this.summerWheels = true;
 //        this.seatsNumber = 4;
-        public Car(String brand, String model, double engineVolume) {
+
+    public Car(String brand, String model, double engineVolume, TypeOfBody typeOfBody) {
             super(brand, model ,engineVolume);
+            this.typeOfBody =typeOfBody;
             String license = "A";
 
+    }
+    public TypeOfBody getTypeOfBody() {
+        return typeOfBody;
+    }
+
+    public void setTypeOfBody(TypeOfBody typeOfBody) {
+        this.typeOfBody = typeOfBody;
     }
 
     @Override
     public void pitStop(boolean pitStop) {
-        if (pitStop == true) {
+        if (pitStop) {
             System.out.println("Нужен пит-стоп!");
         } else {
             System.out.println("Едем дальше!");
@@ -51,6 +62,15 @@ public class Car extends  Transport implements Competing{
     @Override
     public void maxSpeed(int speed) {
         System.out.println("Максимальная скорость: "+speed+" км/ч");
+    }
+
+    @Override
+    public void printType() {
+        if (typeOfBody == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Тип кузова: " + typeOfBody);
+        }
     }
 
 
