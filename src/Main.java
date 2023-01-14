@@ -1,6 +1,7 @@
 import Drivers.DriverB;
 import Drivers.DriverC;
 import Drivers.DriverD;
+import Drivers.DriverLicenseException;
 import vehicle.*;
 
 public class Main {
@@ -10,7 +11,7 @@ public class Main {
 //private static void printInfo(Car auto) {
 //    System.out.println("Автомобиль - " + auto.getBrand() + " " + auto.getModel() + "."+ " Объём двигателя - " + auto.getEngineVolume() +" литров.");
 //}
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DriverLicenseException {
 //        Car lada = new Car("Lada", "Granta", 2015, "Россия","белый",1.7, 220);
 //        System.out.println(lada);
 //        Bus gaz = new Bus("GAZ", "Patriot", 2020, "Россия", "жёлтый", 240);
@@ -44,10 +45,13 @@ public class Main {
         lada.printType();
         zaz.printType();
         gaz.printType();
+        zaz.goService();
+        mercedec.goService();
+        lada.goService();
 
 
-//        DriverB<Car> timur = new DriverB<>("Ахмедов Тимур Алишерович", true, "B", 1);
-//        System.out.println(timur);
+        DriverB<Car> timur = new DriverB<>("Ахмедов Тимур Алишерович", true, "", 1);
+       System.out.println(timur);
 //        timur.checkDriver(audi);
 //        DriverC<Truck> elena = new DriverC<>("Вьюркова Елена Алексеевна", true, "C", 4);
 //        System.out.println(elena);
