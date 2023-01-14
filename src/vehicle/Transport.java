@@ -59,6 +59,8 @@ public abstract class Transport implements Competing {
             this.engineVolume = 1.5;}else { this.engineVolume = engineVolume;
         }
     }
+    public void goService() {
+    }
 
     public void start() {
         System.out.println(getBrand() +" "+ getModel()+" Вперёд! Поехали!");

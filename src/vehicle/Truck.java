@@ -20,6 +20,10 @@ public class Truck extends Transport implements Competing{
         }
 
     }
+    @Override
+    public void goService() {
+        System.out.println("Грузвоик "+getBrand()+" "+getModel()+" проходит диагностику");
+    }
 
     @Override
     public void bestLapTime(int minutes , int seconds) {

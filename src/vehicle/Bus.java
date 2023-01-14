@@ -22,8 +22,10 @@ public class Bus extends  Transport implements Competing{
         }
         System.out.println("Вместимость авто: "+getBrand()+" "+getModel()+ " от " +capacity.getCapacityFrom() +" до "+ capacity.getCapacityTo()+" человек");
     }
-
-
+    @Override
+    public void goService() {
+        System.out.println("Автобусы не проходят диагностику");
+    }
     @Override
     public void pitStop(boolean pitStop) {
         if (pitStop == true) {
