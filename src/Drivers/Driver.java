@@ -2,14 +2,14 @@ package Drivers;
 
 import java.util.Objects;
 
-public class Driver implements DriverFunctions {
+public abstract class Driver implements DriverFunctions {
     private String fullName;
     private boolean license;
     private int experienceYear;
     private String licenseCategory;
 
 
-    public Driver(String fullName, boolean license, String licenseCategory, int experienceYear) {
+    public Driver(String fullName, boolean license, String licenseCategory, int experienceYear) throws DriverLicenseException {
         if (fullName == null || fullName.isEmpty() || fullName.isBlank()) {
             this.fullName = "Неизвестно";
         } else {
@@ -24,7 +24,7 @@ public class Driver implements DriverFunctions {
         if (Objects.equals(licenseCategory, "B") || Objects.equals(licenseCategory, "C") || Objects.equals(licenseCategory, "D")) {
             this.licenseCategory = licenseCategory;
         } else {
-            this.licenseCategory = "["+getLicenseCategory()+"] Такой категории прав нет!";
+            check();
         }
         if (experienceYear == 0) {
             System.out.println("Водитель "+getFullName()+" имеет очень маленький стаж! Отстронить от гонки!");
@@ -70,16 +70,30 @@ public class Driver implements DriverFunctions {
         }
     }
 
-    public void setLicenseCategory(String licenseCategory) {
-        if (Objects.equals(licenseCategory, "B") || Objects.equals(licenseCategory, "C") || Objects.equals(licenseCategory, "D")) {
-            this.licenseCategory = licenseCategory;
-        } else {
-            this.licenseCategory = "["+getLicenseCategory()+"] Такой категории прав нет!";
+    public void setLicenseCategory (String licenseCategory) throws DriverLicenseException {
+        try {
+            check();
+        } catch (DriverLicenseException e) {
+            System.out.println("ERROR");
+            System.out.println(e.getMessage());
         }
-    }
+
+        }
+        //        if (Objects.equals(licenseCategory, "B") || Objects.equals(licenseCategory, "C") || Objects.equals(licenseCategory, "D")) {
+//            this.licenseCategory = licenseCategory;
+//        } else {
+//            this.licenseCategory = "["+getLicenseCategory()+"] Такой категории прав нет!";
+//        }
 
     public String getLicenseCategory() {
         return licenseCategory;
+    }
+
+    public  void check() throws DriverLicenseException {
+        if (Objects.equals(licenseCategory, "B") || Objects.equals(licenseCategory, "C") || Objects.equals(licenseCategory, "D")) {
+            this.licenseCategory = licenseCategory;} else {
+            throw new DriverLicenseException("Водителю "+getFullName()+ " необходимо указать категорию прав!");
+        }
     }
 
     @Override
@@ -117,6 +131,6 @@ public class Driver implements DriverFunctions {
 
     @Override
     public String toString() {
-        return "INFO водителя: ФИО: "+getFullName()+" .Категория водительсикх прав "+getLicenseCategory()+" .Стаж "+getExperienceYear()+" лет.";
+        return "INFO водителя: ФИО: "+getFullName()+" .Категория водительсикх прав "+getLicenseCategory()+" .Стаж "+getExperienceYear()+" лет."+ "\n";
     }
 }
