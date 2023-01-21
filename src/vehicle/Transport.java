@@ -71,6 +71,10 @@ public abstract class Transport implements Competing {
     }
 
     public abstract void printType();
+    @Override
+    public String toString() {
+        return getBrand() +" "+ getModel() + "\n";
+    }
 
 //    public int getYear() {
 //        return year;

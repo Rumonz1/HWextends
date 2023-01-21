@@ -131,6 +131,6 @@ public abstract class Driver implements DriverFunctions {
 
     @Override
     public String toString() {
-        return "INFO водителя: ФИО: "+getFullName()+" .Категория водительсикх прав "+getLicenseCategory()+" .Стаж "+getExperienceYear()+" лет.";
+        return "INFO водителя: ФИО: "+getFullName()+" .Категория водительсикх прав "+getLicenseCategory()+" .Стаж "+getExperienceYear()+" лет."+ "\n";
     }
 }

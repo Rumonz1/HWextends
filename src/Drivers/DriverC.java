@@ -3,7 +3,7 @@ package Drivers;
 import vehicle.Transport;
 
 public class DriverC <A extends Transport> extends Driver {
-    public DriverC(String fullName, boolean license, String licenseCategory, int experienceYear) {
+    public DriverC(String fullName, boolean license, String licenseCategory, int experienceYear) throws DriverLicenseException {
         super(fullName, license, licenseCategory, experienceYear);
 
     }
