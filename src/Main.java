@@ -3,9 +3,7 @@ import Mechanic.Mechanic;
 import vehicle.*;
 import Mechanic.WhichTransport;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 //    private static void printInfo(Car auto){
@@ -70,19 +68,19 @@ public class Main {
         Mechanic miron = new Mechanic("Мирон", "Миронов", "Жесть", WhichTransport.ONLY_TRUCKS);
         Mechanic aleksey = new Mechanic("Алексей", "Алексеев", "СаСталь", WhichTransport.ONLY_TRUCKS);
         Mechanic pavel = new Mechanic("Павел", "Павлов", "Броня", WhichTransport.ONLY_CARS);
-        Map<Transport, Mechanic> mechanicMap = new HashMap<>();
-        mechanicMap.put(lada, egor);
-        mechanicMap.put(fiat, aleksey);
-        mechanicMap.put(fiat, aleksey);
-        mechanicMap.put(fiat, aleksey);
-        mechanicMap.put(fiat, aleksey);
-        mechanicMap.put(zaz, oleg);
-        mechanicMap.put(mercedec, miron);
-        mechanicMap.put(audi, pavel);
-        mechanicMap.put(audi, pavel);
-        mechanicMap.put(audi, pavel);
-
-        System.out.println(mechanicMap);
+//        Map<Transport, Mechanic> mechanicMap = new HashMap<>();
+//        mechanicMap.put(lada, egor);
+//        mechanicMap.put(fiat, aleksey);
+//        mechanicMap.put(fiat, aleksey);
+//        mechanicMap.put(fiat, aleksey);
+//        mechanicMap.put(fiat, aleksey);
+//        mechanicMap.put(zaz, oleg);
+//        mechanicMap.put(mercedec, miron);
+//        mechanicMap.put(audi, pavel);
+//        mechanicMap.put(audi, pavel);
+//        mechanicMap.put(audi, pavel);
+//
+//        System.out.println(mechanicMap);
 //        ArrayList<Mechanic> mechanics =new ArrayList<>();
 //        mechanics.add(egor);
 //        mechanics.add(oleg);
@@ -98,6 +96,25 @@ public class Main {
 //        drivers.add(olga);
 //        drivers.add(boris);
 //        System.out.println(drivers);
+        Set<Driver> driverSet = new HashSet<>();
+        driverSet.add(timur);
+        driverSet.add(timur);
+        driverSet.add(timur);
+        driverSet.add(timur);
+        driverSet.add(elena);
+        driverSet.add(vladimir);
+        driverSet.add(vladimir);
+        driverSet.add(vlad);
+        driverSet.add(olga);
+        driverSet.add(olga);
+        driverSet.add(olga);
+        driverSet.add(boris);
+        Iterator<Driver> driverIter = driverSet.iterator();
+        while (driverIter.hasNext()) {
+            Driver next = driverIter.next();
+            System.out.println(next);
+        }
+//        System.out.println(driverSet);
 //        ArrayList<Transport> transports = new ArrayList<>();
 //        transports.add(gaz);
 //        transports.add(uaz);
