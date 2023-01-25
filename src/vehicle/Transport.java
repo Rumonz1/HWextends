@@ -59,6 +59,8 @@ public abstract class Transport implements Competing {
             this.engineVolume = 1.5;}else { this.engineVolume = engineVolume;
         }
     }
+    public void goService() {
+    }
 
     public void start() {
         System.out.println(getBrand() +" "+ getModel()+" Вперёд! Поехали!");
@@ -69,6 +71,10 @@ public abstract class Transport implements Competing {
     }
 
     public abstract void printType();
+    @Override
+    public String toString() {
+        return getBrand() +" "+ getModel() + "\n";
+    }
 
 //    public int getYear() {
 //        return year;

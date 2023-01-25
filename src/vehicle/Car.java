@@ -53,6 +53,10 @@ public class Car extends  Transport implements Competing{
         }
 
     }
+    @Override
+    public void goService() {
+        System.out.println("Автомобиль "+getBrand()+" "+getModel()+" проходит диагностику");
+    }
 
     @Override
     public void bestLapTime(int minutes , int seconds) {
