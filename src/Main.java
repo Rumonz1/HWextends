@@ -81,6 +81,7 @@ public class Main {
         mechanicMap.put(audi, pavel);
         mechanicMap.put(audi, pavel);
         mechanicMap.put(audi, pavel);
+
         System.out.println(mechanicMap);
 //        ArrayList<Mechanic> mechanics =new ArrayList<>();
 //        mechanics.add(egor);
